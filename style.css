@@ -1,0 +1,123 @@
+/*  Global Styles */
+  /* Resetting default styles for all elements */
+  html, body, div, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  /* Universal selector to apply box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Base styles for the body */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* top navigation Bar sytled by using grid */
+  .navbr {
+    background: blue;
+    color: white;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    padding: 1rem 2rem;
+    gap: 1rem;
+  }
+  
+  /* Logo styling */
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  /* Navigation links container using inline Grid-compatible layout */
+  .nav-links {
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1rem;
+    justify-content: end;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Main Layout Using CSS Grid */
+  .container {
+    display: grid;
+    grid-template-areas: 
+      "sidebar content extra";
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Sidebar section defined by grid area */
+  .sidebar {
+    grid-area: sidebar;
+    background-color: #f0f0f0;
+    padding: 1rem;
+  }
+  
+  /* Main content section */
+  .content {
+    grid-area: content;
+    background-color: #ddd;
+    padding: 1rem;
+  }
+  
+  /* Extra section for additional info */
+  .extra {
+    grid-area: extra;
+    background-color: #f5f5f5;
+    padding: 1rem;
+  }
+  
+  /* Footer area */
+  footer {
+    background: blueviolet;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 20px;
+  }
+  
+  /* Responsive design with CSS Grid */
+  @media (max-width: 900px) {
+    .container {
+      grid-template-areas: 
+        "sidebar"
+        "content"
+        "extra";
+      grid-template-columns: 1fr;
+    }
+  
+    .nav-links {
+      grid-auto-flow: row;
+      justify-content: start;
+    }
+  }
+  
+  /* Mobile View */
+  @media (max-width: 600px) {
+    .navbar {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+    }
+  
+    .nav-links {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      margin-top: 10px;
+    }
+  }
+  
